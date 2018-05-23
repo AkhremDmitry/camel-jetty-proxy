@@ -27,13 +27,13 @@
 
   <camel:camelContext xmlns="http://camel.apache.org/schema/spring">
       <camel:route trace="true" id="ProxyRepo">
-        <camel:from uri="jetty:http://0.0.0.0:8199/test?matchOnUriPrefix=true&amp;chunked=false"/>
-        <camel:to uri="http://0.gravatar.com/avatar?bridgeEndpoint=true"/>
+        <camel:from uri="jetty:http://localhost:8080?matchOnUriPrefix=true&amp;chunked=false"/>
+        <camel:to uri="http://localhost:8090?bridgeEndpoint=true"/>
       </camel:route>
-      <camel:route trace="true" id="ProxyRepo2">
-        <camel:from uri="jetty:http://0.0.0.0:8299/test?matchOnUriPrefix=true"/>
-        <camel:to uri="http://0.gravatar.com/avatar?bridgeEndpoint=true"/>
-      </camel:route>
+      <!--<camel:route trace="true" id="ProxyRepo2">-->
+        <!--<camel:from uri="jetty:http://0.0.0.0:8299/test?matchOnUriPrefix=true"/>-->
+        <!--<camel:to uri="http://0.gravatar.com/avatar?bridgeEndpoint=true"/>-->
+      <!--</camel:route>-->
   </camel:camelContext>
 
 </beans>
